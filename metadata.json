@@ -1,0 +1,7 @@
+{
+  "name": "ESP32 Radar Command",
+  "description": "A real-time dashboard for tracking and analyzing ESP32 IoT devices within signal radius, featuring AI-powered device profiling.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
