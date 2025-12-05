@@ -1,20 +1,23 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# ESP32 Radar Command
 
-# Run and deploy your AI Studio app
+![ESP32 Radar Dashboard](https://placehold.co/1200x600/0f172a/10b981?text=ESP32+Radar+Command+Dashboard)
 
-This contains everything you need to run your app locally.
+## Description
 
-View your app in AI Studio: https://ai.studio/apps/drive/1fzJF7E423a5D9LkpLGDCqd3CGh0PCaD9
+**ESP32 Radar Command** is a futuristic, real-time dashboard designed to track, visualize, and analyze ESP32 and IoT devices within your local network radius. 
 
-## Run Locally
+The application simulates a hardware scanner interface that detects devices via WiFi/BLE signals, plotting them on a tactical radar view based on their Signal Strength (RSSI). It goes beyond simple monitoring by integrating **Google Gemini** to perform AI-driven security analysis on detected device signatures.
 
-**Prerequisites:**  Node.js
+### Key Features
 
+*   **Visual Radar Interface**: Real-time plotting of devices with distance estimation based on signal strength.
+*   **Live Connection Status**: Visual indicators for Connected, Unstable, and Disconnected devices.
+*   **AI Threat Analysis**: One-click integration with the Gemini API to analyze device metadata (ports, services, firmware) and generate a security assessment.
+*   **Device Management**: View detailed telemetry, simulate firmware updates, and monitor battery levels.
+*   **Immersive UI**: A fully responsive, dark-mode "cyberpunk" aesthetic built with Tailwind CSS.
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+### Tech Stack
+
+*   **Frontend**: React, TypeScript, Tailwind CSS
+*   **AI**: Google GenAI SDK (Gemini 2.5 Flash)
+*   **Icons**: Lucide React
