@@ -31,12 +31,12 @@ const Dashboard: React.FC = () => {
   };
 
   return (
-    <div className="flex h-screen overflow-hidden relative">
+    <div className="flex h-full relative overflow-hidden bg-slate-900">
       {/* Main Content Area */}
-      <div className={`flex-1 flex flex-col transition-all duration-300 ${selectedDevice ? 'mr-96' : 'mr-0'}`}>
+      <div className={`flex-1 flex flex-col transition-all duration-300 ${selectedDevice ? 'mr-96' : 'mr-0'} overflow-y-auto`}>
         
         {/* Top Bar Stats */}
-        <div className="p-6 grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="shrink-0 p-6 grid grid-cols-2 md:grid-cols-4 gap-4">
             <div className="bg-slate-800 p-4 rounded border border-slate-700 flex items-center gap-4">
                 <div className="p-3 bg-blue-500/20 text-blue-400 rounded-full"><Radio size={24} /></div>
                 <div>
@@ -68,7 +68,7 @@ const Dashboard: React.FC = () => {
         </div>
 
         {/* Radar Visualization Area */}
-        <div className="flex-1 flex items-center justify-center p-6 relative">
+        <div className="shrink-0 flex items-center justify-center p-6 relative min-h-[500px]">
             <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-slate-800/20 via-slate-900 to-slate-900 -z-10"></div>
             <RadarView 
                 devices={devices} 
@@ -77,8 +77,8 @@ const Dashboard: React.FC = () => {
             />
         </div>
 
-        {/* Device List (Bottom Panel - Optional, kept minimal here for clean UI) */}
-        <div className="h-48 bg-slate-800 border-t border-slate-700 overflow-y-auto hidden md:block">
+        {/* Device List (Bottom Panel) */}
+        <div className="shrink-0 h-48 bg-slate-800 border-t border-slate-700 overflow-y-auto hidden md:block">
             <table className="w-full text-left text-sm text-slate-400">
                 <thead className="bg-slate-900 text-slate-200 sticky top-0">
                     <tr>
@@ -124,7 +124,7 @@ const Dashboard: React.FC = () => {
 
       {/* Slide-out Details Panel */}
       <div 
-        className={`fixed inset-y-0 right-0 w-96 bg-slate-800 shadow-2xl transform transition-transform duration-300 ease-in-out z-20 ${selectedDevice ? 'translate-x-0' : 'translate-x-full'}`}
+        className={`absolute inset-y-0 right-0 w-96 bg-slate-800 shadow-2xl transform transition-transform duration-300 ease-in-out z-20 ${selectedDevice ? 'translate-x-0' : 'translate-x-full'}`}
       >
         {selectedDevice && (
             <DeviceDetails device={selectedDevice} onClose={() => setSelectedDeviceId(null)} />

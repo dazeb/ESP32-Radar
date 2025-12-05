@@ -3,9 +3,9 @@ import Dashboard from './components/Dashboard';
 
 const App: React.FC = () => {
   return (
-    <div className="min-h-screen bg-slate-900 text-slate-200 font-sans selection:bg-indigo-500 selection:text-white">
+    <div className="flex flex-col h-screen bg-slate-900 text-slate-200 font-sans selection:bg-indigo-500 selection:text-white overflow-hidden">
       {/* Header */}
-      <header className="h-16 bg-slate-900 border-b border-slate-800 flex items-center px-6 justify-between">
+      <header className="shrink-0 h-16 bg-slate-900 border-b border-slate-800 flex items-center px-6 justify-between z-30">
         <div className="flex items-center gap-3">
            <div className="w-8 h-8 rounded bg-indigo-600 flex items-center justify-center text-white font-bold shadow-lg shadow-indigo-500/30">
              R
@@ -20,7 +20,7 @@ const App: React.FC = () => {
         </div>
       </header>
 
-      <main>
+      <main className="flex-1 relative overflow-hidden">
         <Dashboard />
       </main>
     </div>
